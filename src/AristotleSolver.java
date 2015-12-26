@@ -1,6 +1,7 @@
 import org.chocosolver.solver.Solver;
 import org.chocosolver.solver.constraints.IntConstraintFactory;
 import org.chocosolver.solver.search.strategy.IntStrategyFactory;
+import org.chocosolver.solver.trace.Chatterbox;
 import org.chocosolver.solver.variables.IntVar;
 import org.chocosolver.solver.variables.VariableFactory;
 
@@ -76,6 +77,8 @@ public class AristotleSolver {
 
         // 5. Launch the resolution process
         solver.findSolution();
+
+        Chatterbox.printStatistics(solver);
 
         // 6. Print the answer
         System.out.println("From top left to bottom right:");
